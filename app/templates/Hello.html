@@ -1,0 +1,64 @@
+<HTML>
+  <HEAD>
+    <TITLE>
+      {{ name }}
+    </TITLE>
+    <STYLE>
+
+      TABLE {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 20%;
+            }
+      TD, TH {
+      border: 1px solid black;
+      text-align: center;
+      padding: 8px;
+              }
+
+    </STYLE>
+  </HEAD>
+  <BODY>
+    <CENTER><B>Hello, welcome to my webpage, I am </B> {{name}}<BR>
+      <BR>
+
+      {% if name == 'resume' %}
+
+
+        <BR><img src="{{url_for('static', filename='Pradeep.jpg')}}" height="300" width="250" /><BR>
+          <BR>
+
+          <p>If you would like to take a look at my career side, you may have a glimpse here <a href="/static/Resume.pdf" target="_blank">Resume</a><BR>
+          The following are the courses I have taken during my time in masters<p>
+          <TABLE>
+          <BR>
+
+            {% for i in headings %}
+              <TH> {{i}} </TH>
+            {% endfor %}
+<!--            {% for crn in CRN %}
+              <TR><TD> {{crn}}</TD>
+            {% endfor %}
+-->
+            {% for t in TITLE %}
+              <TR><TD> {{t}}</TD><TR>
+            {% endfor %}
+
+
+          {% elif name == 'Arya Stark' %}
+
+            <img src="{{url_for('static', filename='Noone.jpg')}}" height="300" width="500" />
+
+          {% else %}
+
+              We don't find you
+
+
+      {% endif %}
+          </TABLE>
+
+
+    </CENTER>
+
+  </BODY>
+</HTML>
