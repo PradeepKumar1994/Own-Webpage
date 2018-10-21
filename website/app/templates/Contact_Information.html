@@ -1,0 +1,83 @@
+<HTML>
+  <HEAD>
+    <TITLE>
+      {{ name }}
+    </TITLE>
+    <STYLE>
+
+      TABLE {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 20%;
+            }
+      TD, TH {
+      border: 1px solid black;
+      text-align: center;
+      padding: 8px;
+              }
+
+
+      .nav{
+
+        background-color: #f1f1f1;
+        text-align: center;
+
+        }
+
+        .nav li{
+
+          display: inline-block;
+          font-size: 20px;
+          padding: 20px;
+
+        }
+
+
+    </STYLE>
+  </HEAD>
+  <BODY>
+
+    <div>
+      <ul class= "nav">
+
+        <li><a href = "Home">Home</a>
+        <li><a href="ProjectP/resume">Resume</a>
+        <li><a href="ProjectP/Contact Information Page">Contact Information </a>
+        <li><a href="{{url_for('login')}}">Admin</a>
+
+      </ul>
+    </div>
+    <BR>
+
+    <BR>
+    <CENTER><B>Please fill the details to be contacted </B> <BR>
+    <CENTER><B>  </B>
+
+      <form action="/ProjectP/post_contact_info" method="post">
+        <br>
+        First name: <input type="text" name = "first"><br>
+        <br>
+        Last name: <input type="text" name = "last"><br>
+        <br>
+        Email ID : <input type="email" padding-left:20 name = "email"><br>
+        <br>
+        <input type="submit" value="Submit">
+
+      </form>
+
+      <ul>
+        {%if info%}
+
+          You're details have been entered are the following: <br>
+          {% for i in info %}
+            {{i}} <br>
+          {%endfor%}
+
+        {%endif%}
+      <BR>
+
+
+    </CENTER>
+
+  </BODY>
+</HTML>
