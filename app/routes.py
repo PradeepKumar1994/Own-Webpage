@@ -25,7 +25,7 @@ Querying_ = Query()
 @app.route('/Home')
 def homepage():
     
-    return render_template('Homepage.html')
+    return render_template('base.html')
 
 
 @app.route('/index')
@@ -54,9 +54,9 @@ def login():
         return render_template('login.html', form = form, title = "Sign In")
 
 
-@app.route('/ProjectP/<name>', methods = ['GET','POST'])
-def hello(name):
-    #name = 'Pradeep Kumar Paladugula'
+@app.route('/About_me', methods = ['GET','POST'])
+def hello():
+    name = 'Pradeep Kumar Paladugula'
     #name = 'No one'
 
     headings = ['TITLE']
@@ -73,7 +73,7 @@ def hello(name):
     
     #template_location = 'Hello.html'
 
-    if(name == 'resume'):
+    if(name == 'Pradeep Kumar Paladugula'):
  
         return render_template('hello.html', name=name, headings = headings, TITLE = TITLE)
 
@@ -81,20 +81,16 @@ def hello(name):
 
         return render_template('hello.html', name=name)
 
-    if(name == 'Contact Information Page'):
-        
-        return render_template('Contact_Information.html')
-        
-        #template_location = 'Contact_Information.html'
-    
-    if(name == 'post_contact_info'):
-        
-        return contact_info_data()
-
     return render_template('Hello.html', name = name)
 
 
-@app.route('/ProjectP/post_contact_info')
+@app.route('/Contact_Information_Page')
+def Contact_Information_Page():
+    
+    return render_template('Contact_Information.html')
+    
+
+@app.route('/post_contact_info')
 def contact_info_data():
     
     if request.method == 'POST':

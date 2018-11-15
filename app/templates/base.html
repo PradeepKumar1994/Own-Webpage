@@ -1,28 +1,46 @@
-<html>
-    <head>
-      {% if title %}
-        <title>{{ title }} - Microblog</title>
-      {% else %}
-        <title>Welcome to Microblog</title>
-      {% endif %}
-    </head>
-    <body>
-        <div>
-            Microblog:
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('login') }}">Login</a>
-            </div>
-        <hr/>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-        {% block content %}
-        {% endblock %}
-    </body>
-</html>
+<HTML>
+  <HEAD>
+    <TITLE>Homepage</TITLE>
+    <STYLE>
+
+
+      TABLE {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 20%;
+                }
+      TD, TH {
+          border: 1px solid black;
+          text-align: center;
+          padding: 8px;
+                  }
+
+
+      .nav{
+        background-color: #f1f1f1;
+        text-align: center;
+      }
+
+      .nav li{
+        display: inline-block;
+        font-size: 20px;
+        padding: 20px;
+      }
+
+
+    </STYLE>
+
+  </HEAD>
+  <BODY>
+
+    <ul class= "nav">
+
+      <li><a href = "Home">Home</a>
+      <li><a href="About_me">About Me</a>
+      <li><a href="Contact_Information_Page">Contact Information </a>
+      <li><a href="{{url_for('login')}}">Admin</a>
+
+    </ul>
+
+  </BODY>
+</HTML>

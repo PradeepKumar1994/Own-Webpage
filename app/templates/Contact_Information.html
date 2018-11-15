@@ -1,54 +1,4 @@
-<HTML>
-  <HEAD>
-    <TITLE>
-      {{ name }}
-    </TITLE>
-    <STYLE>
-
-      TABLE {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 20%;
-            }
-      TD, TH {
-      border: 1px solid black;
-      text-align: center;
-      padding: 8px;
-              }
-
-
-      .nav{
-
-        background-color: #f1f1f1;
-        text-align: center;
-
-        }
-
-        .nav li{
-
-          display: inline-block;
-          font-size: 20px;
-          padding: 20px;
-
-        }
-
-
-    </STYLE>
-  </HEAD>
-  <BODY>
-
-    <div>
-      <ul class= "nav">
-
-        <li><a href = "Home">Home</a>
-        <li><a href="ProjectP/resume">Resume</a>
-        <li><a href="ProjectP/Contact Information Page">Contact Information </a>
-        <li><a href="{{url_for('login')}}">Admin</a>
-
-      </ul>
-    </div>
-    <BR>
-
+    {% include "base.html" %}
     <BR>
     <CENTER><B>Please fill the details to be contacted </B> <BR>
     <CENTER><B>  </B>
@@ -78,6 +28,3 @@
 
 
     </CENTER>
-
-  </BODY>
-</HTML>

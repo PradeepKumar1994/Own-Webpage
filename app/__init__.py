@@ -6,14 +6,20 @@ Created on Wed Sep 26 08:27:05 2018
 """
 
 from flask import Flask
+
 from config import Config
-from flask_sqlalchemy import SQLALCHEMY
+
+from flask_sqlalchemy import SQLAlchemy
+
 from flask_migrate import Migrate
 
-app = Flask(__name__, static_url_path = '/static')
+app = Flask(__name__) #, static_url_path = '/static' add later if nothing works out for db init
+
 app.config.from_object(Config)
-db = SQLALCHEMY(app)    #represents the database
-migrate = Migrate(app, db)  #represents migration engine
+
+db = SQLAlchemy(app)    #represents the database instance
+
+migrate = Migrate(app, db)  #represents migration engine instance
 
 from app import routes, models
 

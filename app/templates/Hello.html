@@ -1,28 +1,10 @@
-<HTML>
-  <HEAD>
-    <TITLE>
-      {{ name }}
-    </TITLE>
-    <STYLE>
 
-      TABLE {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 20%;
-            }
-      TD, TH {
-      border: 1px solid black;
-      text-align: center;
-      padding: 8px;
-              }
+    {% include "base.html" %}
 
-    </STYLE>
-  </HEAD>
-  <BODY>
     <CENTER><B>Hello, welcome to my webpage, I am </B> {{name}}<BR>
       <BR>
 
-      {% if name == 'resume' %}
+      {% if name == 'Pradeep Kumar Paladugula' %}
 
 
         <BR><img src="{{url_for('static', filename='Pradeep.jpg')}}" height="300" width="250" /><BR>
@@ -59,6 +41,3 @@
 
 
     </CENTER>
-
-  </BODY>
-</HTML>
